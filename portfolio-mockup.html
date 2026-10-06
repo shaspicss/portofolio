@@ -1,0 +1,2050 @@
+<!DOCTYPE html>
+<html lang="id" data-trae-theme="light" class="lang-id"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Editor Portfolio Mockup</title>
+  <style>
+    :root {
+      --bg: #fffdfb;
+      --surface: #ffffff;
+      --surface-soft: #fff4f7;
+      --surface-warm: #fff7dd;
+      --border: #eddcd9;
+      --text: #372d31;
+      --muted: #7d6d72;
+      --pink: #f8d6e1;
+      --pink-strong: #efb9ca;
+      --yellow: #fff1b8;
+      --yellow-strong: #f4df8b;
+      --shadow: 0 12px 40px rgba(55, 45, 49, 0.06);
+      --radius-lg: 28px;
+      --radius-md: 20px;
+      --radius-sm: 14px;
+      --container: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 253, 251, 0.84);
+      border-bottom: 1px solid rgba(237, 220, 217, 0.75);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 76px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-mark {
+      font-size: 0.86rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .brand-name {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav a:hover {
+      color: var(--text);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      gap: 6px;
+      padding: 5px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+    }
+
+    .lang-switch button {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      padding: 8px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .lang-switch button.active {
+      background: var(--surface-soft);
+      color: var(--text);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--pink);
+      border-color: transparent;
+    }
+
+    .btn-primary:hover {
+      background: var(--pink-strong);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+    }
+
+    .btn-secondary:hover {
+      background: var(--surface-soft);
+    }
+
+    .hero {
+      padding: 72px 0 34px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.92rem;
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--pink-strong);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    .hero-title {
+      margin-top: 22px;
+      font-size: clamp(2.8rem, 5vw, 4.3rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      max-width: 12ch;
+    }
+
+    .hero-copy {
+      margin-top: 20px;
+      max-width: 58ch;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .hero-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 560px;
+    }
+
+    .visual-card {
+      position: absolute;
+      border-radius: 30px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .portrait-card {
+      inset: 44px 36px 24px 80px;
+      padding: 22px;
+      background: linear-gradient(180deg, #fffaf8 0%, #fff7f5 100%);
+    }
+
+    .portrait-frame {
+      width: 100%;
+      height: 100%;
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at top left, rgba(248, 214, 225, 0.9), transparent 36%),
+        radial-gradient(circle at bottom right, rgba(255, 241, 184, 0.9), transparent 34%),
+        #fff8f7;
+      border: 1px solid rgba(237, 220, 217, 0.8);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .portrait-figure {
+      width: 72%;
+      height: 76%;
+      border-radius: 180px 180px 42px 42px;
+      background:
+        radial-gradient(circle at 50% 20%, #f7d7c0 0 15%, transparent 15.5%),
+        radial-gradient(circle at 50% 16%, #3b2d32 0 18%, transparent 18.5%),
+        linear-gradient(180deg, #f3cad6 0%, #efb9ca 100%);
+      position: absolute;
+      bottom: -4%;
+    }
+
+    .portrait-caption,
+    .stats-card,
+    .reel-card {
+      padding: 18px 20px;
+    }
+
+    .portrait-caption {
+      left: 0;
+      bottom: 30px;
+      width: 220px;
+      background: var(--surface);
+    }
+
+    .reel-card {
+      top: 0;
+      right: 0;
+      width: 235px;
+      background: var(--surface-soft);
+    }
+
+    .stats-card {
+      right: 10px;
+      bottom: 0;
+      width: 250px;
+      background: var(--surface-warm);
+    }
+
+    .small-label {
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .large-value {
+      margin-top: 10px;
+      font-size: 1.55rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .muted-text {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .chips {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(237, 220, 217, 0.8);
+      font-size: 0.82rem;
+      color: var(--text);
+    }
+
+    section {
+      padding: 54px 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 32px;
+      align-items: start;
+      margin-bottom: 28px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin-top: 14px;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+    }
+
+    .section-copy {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 62ch;
+    }
+
+    .grid-2,
+    .grid-3 {
+      display: grid;
+      gap: 20px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .card-soft {
+      background: var(--surface-soft);
+    }
+
+    .card-warm {
+      background: var(--surface-warm);
+    }
+
+    .card-title {
+      margin-top: 14px;
+      font-size: 1.35rem;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .card-copy {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .list {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      color: var(--muted);
+    }
+
+    .list li::before {
+      content: "•";
+      color: var(--pink-strong);
+      font-weight: 700;
+      margin-right: 10px;
+    }
+
+    .who-card {
+      min-height: 230px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .symbol {
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+    }
+
+    .work-card {
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .work-thumb {
+      aspect-ratio: 4 / 3;
+      border-bottom: 1px solid var(--border);
+      background:
+        radial-gradient(circle at top left, rgba(248, 214, 225, 0.95), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(255, 241, 184, 0.95), transparent 28%),
+        #fff9f8;
+      position: relative;
+      padding: 18px;
+    }
+
+    .thumb-layout {
+      position: absolute;
+      inset: 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(237, 220, 217, 0.8);
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 12px;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.45);
+    }
+
+    .thumb-box {
+      border-radius: 14px;
+      border: 1px solid rgba(237, 220, 217, 0.9);
+      background: rgba(255, 255, 255, 0.82);
+    }
+
+    .thumb-column {
+      display: grid;
+      gap: 12px;
+    }
+
+    .work-body {
+      padding: 22px 22px 24px;
+    }
+
+    .work-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .badge {
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .work-title {
+      margin-top: 14px;
+      font-size: 1.2rem;
+      line-height: 1.25;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .step {
+      min-height: 230px;
+    }
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+    }
+
+    .quotes {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .quote-mark {
+      font-size: 2.6rem;
+      line-height: 1;
+      color: var(--pink-strong);
+    }
+
+    .quote-author {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .cta-panel {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      padding: 30px;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .contact-list {
+      margin-top: 22px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-item {
+      padding: 16px 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: #fffefe;
+      border-radius: 16px;
+      padding: 14px 16px;
+      font: inherit;
+      color: var(--text);
+      outline: none;
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--pink-strong);
+      box-shadow: 0 0 0 4px rgba(248, 214, 225, 0.35);
+    }
+
+    .site-footer {
+      padding: 30px 0 42px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+    }
+
+    [data-lang] {
+      display: none;
+    }
+
+    html.lang-id [data-lang="id"],
+    html.lang-en [data-lang="en"] {
+      display: block;
+    }
+
+    html.lang-id [data-lang-inline="id"],
+    html.lang-en [data-lang-inline="en"] {
+      display: inline;
+    }
+
+    [data-lang-inline] {
+      display: none;
+    }
+
+    @media (max-width: 1080px) {
+      .nav {
+        display: none;
+      }
+
+      .hero-grid,
+      .section-head,
+      .cta-panel,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3,
+      .steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero-visual {
+        min-height: 500px;
+      }
+
+      .portrait-card {
+        inset: 56px 28px 36px 56px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .header-inner {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 16px 0;
+      }
+
+      .hero {
+        padding-top: 40px;
+      }
+
+      .hero-title {
+        max-width: none;
+      }
+
+      .hero-visual {
+        min-height: 420px;
+      }
+
+      .portrait-card {
+        inset: 60px 18px 26px 24px;
+      }
+
+      .reel-card,
+      .stats-card,
+      .portrait-caption {
+        position: absolute;
+        width: auto;
+      }
+
+      .reel-card {
+        top: 0;
+        left: 0;
+        right: auto;
+        max-width: 200px;
+      }
+
+      .stats-card {
+        right: 0;
+        max-width: 205px;
+      }
+
+      .portrait-caption {
+        left: 0;
+        bottom: 0;
+        max-width: 210px;
+      }
+
+      .grid-2,
+      .grid-3,
+      .quotes,
+      .steps,
+      .field-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-panel,
+      .card,
+      .contact-item {
+        padding: 22px;
+      }
+    }
+  </style>
+<script>document.documentElement.setAttribute('data-trae-theme', "light");window.__TRAE_DISABLE_LEGACY_ADD_TO_CHAT__=true;</script><style data-trae-edit-ui="true" id="trae-previewer-tools-styles">:root {
+  --trae-layer-image-download: 89990;
+  --trae-layer-browser-inspect-overlay: 90000;
+  --trae-layer-browser-inspect-highlight: 90010;
+  --trae-layer-browser-inspect-action: 90020;
+  --trae-layer-text-selection-action: 90030;
+  --trae-layer-edit-tooltip: 100095;
+}
+:root,
+[data-trae-theme='dark'] {
+  --trae-bg-base-default: #171717;
+  --trae-bg-menu: #222427;
+  --trae-bg-overlay-l1: rgba(255, 255, 255, 0.04);
+  --trae-bg-overlay-l2: rgba(255, 255, 255, 0.08);
+  --trae-bg-overlay-l3: rgba(255, 255, 255, 0.12);
+  --trae-bg-overlay-l4: rgba(255, 255, 255, 0.16);
+  --trae-bg-invert: #f5f9fe;
+  --trae-bg-invert-hover: #e8ecf0;
+  --trae-bg-invert-active: #dce0e4;
+  --trae-bg-invert-disabled: rgba(224, 226, 242, 0.12);
+  --bg-bg-brand-disabled: rgba(75, 63, 227, 0.35);
+  --bg-bg-brand-popup: rgba(106, 111, 255, 0.15);
+  --trae-border-l1: #e0e2f217;
+  --trae-border-l2: rgba(255, 255, 255, 0.12);
+  --trae-border-l3: rgba(255, 255, 255, 0.08);
+  --trae-border-neutral-l3: rgba(229, 229, 229, 0.20);
+  --trae-border-brand: #6a6fff;
+  --trae-text-default: #f5f9fe;
+  --trae-text-default-hover: #f5f9fe;
+  --trae-text-default-active: #f5f9fe;
+  --trae-text-secondary: rgba(245, 249, 254, 0.5);
+  --trae-text-tertiary: rgba(245, 249, 254, 0.4);
+  --trae-text-disabled: #666b75;
+  --trae-text-onaccent: #222427;
+  --trae-icon-default: #f5f9fe;
+  --trae-icon-secondary: rgba(245, 249, 254, 0.5);
+  --trae-icon-brand: #6a6fff;
+  --icon-icon-brand: var(--trae-icon-brand);
+  --trae-icon-onaccent: #222427;
+  --trae-status-success: #22c55e;
+  --trae-status-primary: #3b82f6;
+  --trae-status-primary-default: #387bff;
+  --trae-status-primary-surface-l1: rgba(53, 121, 255, 0.18);
+  --trae-status-success-default: #33c192;
+  --trae-status-success-surface-l1: rgba(0, 165, 110, 0.18);
+  --trae-status-error-default: #f65a5a;
+  --trae-status-error-surface-l1: rgba(246, 70, 70, 0.18);
+  --trae-annotation-marker-bg: #4b3fe3;
+  --trae-annotation-marker-text: #ffffff;
+  --trae-annotation-region-border: var(--trae-status-primary-default);
+  --trae-region-outside-mask-bg: rgba(0, 0, 0, 0.32);
+  --trae-panel-shadow: 0px 6px 24px -1px rgba(0, 0, 0, 0.16);
+  --trae-floating-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+  --trae-shadow-elevation-50: 0 1px 2px -1px rgba(0, 0, 0, 0.45);
+  --text-text-default: var(--trae-text-default);
+  --text-text-onaccent: var(--trae-text-onaccent);
+  --bg-bg-menu: var(--trae-bg-menu);
+  --bg-bg-white: var(--trae-bg-menu);
+  --bg-bg-invert: var(--trae-bg-invert);
+  --bg-bg-invert-disabled: var(--trae-bg-invert-disabled);
+  --bg-bg-overlay-l1: var(--trae-bg-overlay-l1);
+  --bg-bg-overlay-l2: var(--trae-bg-overlay-l2);
+  --bg-bg-overlay-l3: var(--trae-bg-overlay-l3);
+  --border-border-neutral-l1: var(--trae-border-l1);
+  --border-border-brand: var(--trae-border-brand);
+  --border-border-brand-half: rgba(106, 111, 255, 0.4);
+  --status-error-default: var(--trae-status-error-default);
+  --status-error-surface-l1: var(--trae-status-error-surface-l1);
+  --radius-radius-md-12: 12px;
+  --spacers-spacer-0: 0;
+  --spacers-spacer-6: 6px;
+}
+
+[data-trae-theme='light'] {
+  --trae-bg-base-default: #fafafa;
+  --trae-bg-menu: #ffffff;
+  --trae-bg-overlay-l1: rgba(0, 0, 0, 0.04);
+  --trae-bg-overlay-l2: rgba(0, 0, 0, 0.06);
+  --trae-bg-overlay-l3: rgba(0, 0, 0, 0.08);
+  --trae-bg-overlay-l4: rgba(0, 0, 0, 0.12);
+  --trae-bg-invert: #1f2328;
+  --trae-bg-invert-hover: #32383f;
+  --trae-bg-invert-active: #444d56;
+  --trae-bg-invert-disabled: rgba(115, 115, 115, 0.20);
+  --bg-bg-brand-disabled: rgba(75, 63, 227, 0.22);
+  --bg-bg-brand-popup: rgba(170, 183, 255, 0.36);
+  --trae-border-l1: rgba(0, 0, 0, 0.1);
+  --trae-border-l2: rgba(0, 0, 0, 0.12);
+  --trae-border-l3: rgba(0, 0, 0, 0.08);
+  --trae-border-neutral-l3: rgba(115, 115, 115, 0.36);
+  --trae-border-brand: #4b3fe3;
+  --trae-text-default: #1f2328;
+  --trae-text-default-hover: #111214;
+  --trae-text-default-active: #111214;
+  --trae-text-secondary: rgba(31, 35, 40, 0.5);
+  --trae-text-tertiary: rgba(31, 35, 40, 0.4);
+  --trae-text-disabled: #a1a1a1;
+  --trae-text-onaccent: #ffffff;
+  --trae-icon-default: #1f2328;
+  --trae-icon-secondary: rgba(31, 35, 40, 0.5);
+  --trae-icon-brand: #4b3fe3;
+  --icon-icon-brand: var(--trae-icon-brand);
+  --trae-icon-onaccent: #ffffff;
+  --trae-status-success: #22c55e;
+  --trae-status-primary: #3b82f6;
+  --trae-status-primary-default: #2f74ff;
+  --trae-status-primary-surface-l1: rgba(47, 116, 255, 0.12);
+  --trae-status-success-default: #15a877;
+  --trae-status-success-surface-l1: rgba(64, 176, 139, 0.12);
+  --trae-status-error-default: #e8463a;
+  --trae-status-error-surface-l1: rgba(232, 70, 58, 0.12);
+  --trae-annotation-marker-bg: #4b3fe3;
+  --trae-annotation-marker-text: #ffffff;
+  --trae-annotation-region-border: var(--trae-status-primary-default);
+  --trae-region-outside-mask-bg: rgba(0, 0, 0, 0.18);
+  --trae-panel-shadow: 0px 6px 24px -1px rgba(24, 24, 24, 0.06);
+  --trae-floating-shadow: 0px 2px 8px 0px rgba(24, 24, 24, 0.2);
+  --trae-shadow-elevation-50: 0 1px 2px -1px rgba(24, 24, 24, 0.08);
+  --text-text-default: var(--trae-text-default);
+  --text-text-onaccent: var(--trae-text-onaccent);
+  --bg-bg-menu: var(--trae-bg-menu);
+  --bg-bg-white: var(--trae-bg-menu);
+  --bg-bg-invert: var(--trae-bg-invert);
+  --bg-bg-invert-disabled: var(--trae-bg-invert-disabled);
+  --bg-bg-overlay-l1: var(--trae-bg-overlay-l1);
+  --bg-bg-overlay-l2: var(--trae-bg-overlay-l2);
+  --bg-bg-overlay-l3: var(--trae-bg-overlay-l3);
+  --border-border-neutral-l1: var(--trae-border-l1);
+  --border-border-brand: var(--trae-border-brand);
+  --border-border-brand-half: rgba(75, 63, 227, 0.4);
+  --status-error-default: var(--trae-status-error-default);
+  --status-error-surface-l1: var(--trae-status-error-surface-l1);
+  --radius-radius-md-12: 12px;
+  --spacers-spacer-0: 0;
+  --spacers-spacer-6: 6px;
+}
+
+@keyframes trae-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes trae-edit-bar-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes trae-edit-bar-leave {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.98);
+  }
+}
+
+@keyframes trae-edit-panel-leave {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.98);
+  }
+}
+
+.trae-edit-mode-active:not(.trae-edit-mode-dragging) body *:not([data-trae-edit-ui]):not([data-trae-edit-ui] *) {
+  transition: none !important;
+  animation-play-state: paused !important;
+}
+
+.trae-edit-mode-reorder-hit-test [data-trae-edit-ui]:not(.trae-edit-pointer-shield):not(.trae-edit-panel),
+.trae-edit-mode-reorder-hit-test [data-trae-edit-ui]:not(.trae-edit-pointer-shield):not(.trae-edit-panel) * {
+  pointer-events: none !important;
+}
+
+.trae-browser-inspect-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--trae-layer-browser-inspect-overlay);
+  pointer-events: auto;
+  background: transparent;
+}
+
+.trae-browser-inspect-highlight-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: var(--trae-layer-browser-inspect-highlight);
+  display: none;
+}
+
+.trae-browser-inspect-highlight-tag {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 18px;
+  padding: 0 6px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: var(--trae-status-success-default);
+  color: var(--trae-text-onaccent);
+  font-size: 12px;
+  font-weight: 400;
+  display: none;
+  align-items: center;
+  z-index: var(--trae-layer-browser-inspect-action);
+}
+
+.trae-browser-inspect-highlight-box-show {
+  display: flex;
+}
+
+.trae-browser-inspect-highlight-tag.trae-browser-inspect-highlight-box-show {
+  display: none;
+}
+
+.trae-browser-inspect-select-button.trae-browser-inspect-highlight-box-show {
+  display: block !important;
+}
+
+.trae-browser-inspect-select-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: var(--trae-layer-browser-inspect-action);
+}
+
+.trae-browser-inspect-select-highlight-box {
+  background: transparent !important;
+}
+
+.trae-browser-inspect-select-highlight-box .trae-browser-inspect-highlight-tag {
+  background-color: var(--trae-status-success-default);
+}
+
+.trae-add-to-chat-card {
+  display: block;
+  overflow: hidden;
+  background: var(--trae-bg-menu);
+  border: 1px solid var(--trae-border-l1);
+  border-radius: 8px;
+  box-shadow: var(--trae-floating-shadow);
+  transition:
+    width 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    height 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.trae-add-to-chat-content {
+  position: relative;
+  width: max-content;
+}
+
+.trae-fade-exit {
+  opacity: 0;
+  transition: opacity 0.15s ease-out;
+}
+
+.trae-fade-enter {
+  opacity: 1;
+  transition: opacity 0.2s ease-in;
+}
+
+.trae-buttons-view {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px;
+  background: transparent;
+}
+
+.trae-action-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transform: none !important;
+  transition: none !important;
+  animation: none !important;
+}
+
+.trae-action-button:hover {
+  background: var(--trae-bg-overlay-l2);
+}
+
+.trae-action-button:active {
+  background: var(--trae-bg-overlay-l3);
+}
+
+.trae-action-button:focus-visible {
+  outline: 2px solid var(--trae-status-primary);
+  outline-offset: 1px;
+}
+
+.trae-action-button-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  color: var(--trae-icon-default);
+  flex-shrink: 0;
+}
+
+.trae-action-button-title {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16px;
+  color: var(--trae-text-default);
+  white-space: nowrap;
+}
+
+.trae-edit-toolbar-button-active {
+  background: var(--bg-bg-brand-disabled, rgba(75, 63, 227, 0.22)) !important;
+  color: var(--icon-icon-brand, #4b3fe3) !important;
+  font-weight: bold !important;
+}
+
+.trae-edit-toolbar-button-active:hover {
+  background: var(--bg-bg-brand-popup, rgba(170, 183, 255, 0.36)) !important;
+}
+
+.trae-edit-toolbar button[data-action='alignment-dropdown']:hover,
+.trae-edit-toolbar button[data-action='text-align-dropdown']:hover,
+.trae-edit-toolbar button[data-action='font-decrease']:hover,
+.trae-edit-toolbar button[data-action='font-increase']:hover,
+.trae-edit-toolbar button[data-action^='align-']:hover {
+  border-radius: 8px;
+  background: var(--bg-bg-overlay-l1, rgba(115, 115, 115, 0.08)) !important;
+}
+
+.trae-edit-toolbar button[data-action='alignment-dropdown']:active,
+.trae-edit-toolbar button[data-action='text-align-dropdown']:active,
+.trae-edit-toolbar button[data-action='font-decrease']:active,
+.trae-edit-toolbar button[data-action='font-increase']:active,
+.trae-edit-toolbar button[data-action^='align-']:active {
+  border-radius: 8px;
+  background: var(--bg-bg-overlay-l2, rgba(115, 115, 115, 0.12)) !important;
+}
+
+.trae-comment-input {
+  background: transparent;
+  color: var(--trae-text-default);
+  caret-color: var(--trae-text-default);
+}
+
+.trae-comment-input::placeholder {
+  color: var(--trae-text-tertiary);
+}
+
+.trae-point-edit-bar,
+.trae-point-comment-input-bar,
+.trae-comment-only-panel {
+  transform-origin: top center;
+  will-change: opacity, transform;
+}
+
+.trae-edit-panel:not(.trae-edit-panel-leave) {
+  pointer-events: auto !important;
+}
+
+.trae-edit-bar-enter {
+  animation: trae-edit-bar-enter var(--transition-normal, 0.18s cubic-bezier(0.2, 0, 0, 1)) both;
+}
+
+.trae-edit-bar-leave {
+  pointer-events: none;
+  animation: trae-edit-bar-leave var(--transition-fast, 0.14s ease) both;
+}
+
+.trae-edit-panel-leave {
+  pointer-events: none;
+  animation: trae-edit-panel-leave var(--transition-fast, 0.14s ease) both;
+}
+
+.trae-edit-panel [data-trae-tooltip] {
+  position: relative;
+}
+
+.trae-edit-panel [data-trae-tooltip]::after {
+  content: attr(data-trae-tooltip);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  z-index: var(--trae-layer-edit-tooltip);
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--trae-bg-invert, var(--bg-bg-invert));
+  color: var(--trae-text-onaccent, var(--text-text-onaccent));
+  box-shadow: var(--trae-floating-shadow);
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'PingFang SC', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.039px;
+  white-space: nowrap;
+  pointer-events: none;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateX(-50%);
+  visibility: hidden;
+}
+
+.trae-edit-panel [data-trae-tooltip]::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 5px);
+  z-index: var(--trae-layer-edit-tooltip);
+  width: 8px;
+  height: 4px;
+  background: var(--trae-bg-invert, var(--bg-bg-invert));
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform: translateX(-50%);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.trae-edit-panel [data-trae-tooltip]:hover::after,
+.trae-edit-panel [data-trae-tooltip]:focus-visible::after,
+.trae-edit-panel [data-trae-tooltip]:hover::before,
+.trae-edit-panel [data-trae-tooltip]:focus-visible::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.trae-comment-btn {
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.trae-comment-btn:disabled {
+  cursor: not-allowed;
+}
+
+.trae-comment-btn:focus-visible {
+  outline: 2px solid var(--trae-status-primary);
+  outline-offset: 1px;
+}
+
+.trae-comment-btn-primary {
+  background: var(--trae-bg-invert);
+  color: var(--trae-text-onaccent);
+}
+
+.trae-comment-btn-primary:hover:not(:disabled) {
+  background: var(--trae-bg-invert-hover);
+}
+
+.trae-comment-btn-primary:active:not(:disabled) {
+  background: var(--trae-bg-invert-active);
+}
+
+.trae-comment-btn-primary:disabled {
+  background: var(--trae-bg-invert-disabled);
+  color: var(--trae-text-disabled);
+}
+
+.trae-comment-btn-secondary {
+  background: var(--trae-bg-overlay-l2);
+  color: var(--trae-text-default);
+}
+
+.trae-comment-btn-secondary:hover:not(:disabled) {
+  background: var(--trae-bg-overlay-l3);
+}
+
+.trae-comment-btn-secondary:active:not(:disabled) {
+  background: var(--trae-bg-overlay-l4);
+}
+
+.trae-comment-btn-secondary:disabled {
+  background: var(--trae-bg-overlay-l2);
+  color: var(--trae-text-disabled);
+}
+
+.trae-comment-btn-text {
+  background: transparent;
+  color: var(--trae-text-default);
+}
+
+.trae-comment-btn-text:hover:not(:disabled) {
+  border-radius: 8px;
+  background: var(--bg-bg-overlay-l1, var(--trae-bg-overlay-l1));
+  color: var(--trae-text-default-hover);
+}
+
+.trae-comment-btn-text:active:not(:disabled) {
+  border-radius: 8px;
+  background: var(--trae-bg-overlay-l2);
+  color: var(--trae-text-default-active);
+}
+
+.trae-comment-btn-text:disabled {
+  background: transparent;
+  color: var(--trae-text-disabled);
+}
+
+.trae-marking-btn {
+  justify-content: center;
+}
+
+.trae-marking-btn:hover:not(:disabled) {
+  background: var(--trae-bg-overlay-l1) !important;
+}
+
+.trae-marking-btn-active {
+  background: var(--bg-bg-brand-disabled, rgba(75, 63, 227, 0.22)) !important;
+  color: var(--icon-icon-brand, var(--trae-icon-brand)) !important;
+}
+
+.trae-marking-btn-active:hover {
+  background: var(--bg-bg-brand-popup, rgba(170, 183, 255, 0.36)) !important;
+  color: var(--icon-icon-brand, var(--trae-icon-brand)) !important;
+}
+
+.trae-marking-btn:active:not(:disabled) {
+  background: var(--trae-bg-overlay-l2) !important;
+}
+
+.trae-marking-btn:disabled {
+  color: var(--trae-text-disabled) !important;
+  cursor: not-allowed !important;
+}
+
+.trae-action-button-shortcut {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--trae-icon-secondary);
+  flex-shrink: 0;
+}
+
+.trae-shortcut-container {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.trae-shortcut-key {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 12px;
+  color: var(--trae-icon-secondary);
+}
+
+.trae-add-to-chat-divider {
+  width: 2px;
+  height: 12px;
+  padding: 0 6px;
+  box-sizing: content-box;
+  background-clip: content-box;
+  background-color: var(--trae-border-l2);
+  flex-shrink: 0;
+}
+
+.trae-editor-view {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  padding: 8px;
+  background: transparent;
+}
+
+.trae-editor-text-container {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  background: var(--trae-bg-overlay-l1);
+  border: 1px solid var(--trae-border-l3);
+  border-radius: 4px;
+  gap: 8px;
+}
+
+.trae-editor-textarea {
+  flex: 1;
+  padding: 0 2px;
+  border: none;
+  background: transparent;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--trae-text-default);
+  resize: none;
+  outline: none;
+  overflow-y: auto;
+  max-height: 140px;
+}
+
+.trae-editor-textarea::placeholder {
+  color: var(--trae-text-tertiary);
+}
+
+.trae-editor-action-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.2s ease-out,
+    opacity 0.2s ease-out,
+    margin-top 0.2s ease-out;
+}
+
+.trae-editor-action-bar-visible {
+  max-height: 32px;
+  opacity: 1;
+  margin-top: 8px;
+}
+
+.trae-editor-cancel-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  padding: 0 4px;
+  background: var(--trae-bg-overlay-l2);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.trae-editor-cancel-button:hover {
+  background: var(--trae-bg-overlay-l3);
+}
+
+.trae-editor-cancel-button:active {
+  background: var(--trae-bg-overlay-l3);
+}
+
+.trae-editor-cancel-button:focus-visible {
+  outline: 2px solid var(--trae-status-primary);
+  outline-offset: 1px;
+}
+
+.trae-editor-cancel-text {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16px;
+  color: var(--trae-text-default);
+  white-space: nowrap;
+  padding: 0 4px;
+}
+
+.trae-editor-submit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  padding: 0 8px;
+  background: var(--trae-bg-invert);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.trae-editor-submit-button:hover {
+  background: var(--trae-bg-invert-hover);
+}
+
+.trae-editor-submit-button:active {
+  background: var(--trae-bg-invert-active);
+}
+
+.trae-editor-submit-button:focus-visible {
+  outline: 2px solid var(--trae-status-primary);
+  outline-offset: 1px;
+}
+
+.trae-editor-submit-text {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16px;
+  color: var(--trae-text-onaccent);
+  white-space: nowrap;
+  padding: 0 4px;
+}
+
+.trae-editor-submit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+  color: var(--trae-icon-onaccent);
+  flex-shrink: 0;
+}
+
+.trae-success-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 12px;
+  height: 32px;
+  white-space: nowrap;
+}
+
+.trae-success-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  color: var(--trae-status-success);
+  flex-shrink: 0;
+}
+
+.trae-success-text {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--trae-text-default);
+  user-select: none;
+}
+</style></head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="brand">
+        <span class="brand-mark">Portfolio</span>
+        <span class="brand-name">Nayla Studio</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-switch" aria-label="Language switch">
+          <button class="active" type="button" data-set-lang="id">ID</button>
+          <button type="button" data-set-lang="en">EN</button>
+        </div>
+        <a class="btn btn-primary" href="#contact">
+          <span data-lang-inline="id">Mari Bekerja Sama</span>
+          <span data-lang-inline="en">Let's Work Together</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            <span data-lang-inline="id">Content Editor &amp; Personal Content Assistant</span>
+            <span data-lang-inline="en">Content Editor &amp; Personal Content Assistant</span>
+          </div>
+
+          <div data-lang="id">
+            <h1 class="hero-title">Konten yang lebih polished, konsisten, dan kuat secara visual.</h1>
+            <p class="hero-copy">Saya membantu creator, influencer, dan brand mengembangkan konten yang terasa lebih terarah, dari ide dan support produksi sampai final editing yang siap publish.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#work">Lihat Portofolio</a>
+              <a class="btn btn-secondary" href="#contact">Diskusikan Project</a>
+            </div>
+            <p class="hero-note">Tersedia untuk project lokal dan internasional.</p>
+          </div>
+
+          <div data-lang="en">
+            <h1 class="hero-title">Content that feels polished, consistent, and visually strong.</h1>
+            <p class="hero-copy">I help creators, influencers, and brands shape more intentional content, from creative direction and shoot support to final editing that is ready to publish.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#work">View Portfolio</a>
+              <a class="btn btn-secondary" href="#contact">Discuss a Project</a>
+            </div>
+            <p class="hero-note">Available for local and international collaborations.</p>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="visual-card portrait-card">
+            <div class="portrait-frame">
+              <div class="portrait-figure"></div>
+            </div>
+          </div>
+
+          <div class="visual-card reel-card">
+            <div class="small-label">Short-form edits</div>
+            <div class="large-value">Reels, TikTok, creator cuts</div>
+            <div class="chips">
+              <span class="chip">Hooks</span>
+              <span class="chip">Subtitles</span>
+              <span class="chip">Pacing</span>
+            </div>
+          </div>
+
+          <div class="visual-card portrait-caption">
+            <div class="small-label">Creative support</div>
+            <div class="large-value">From concept to final delivery</div>
+            <p class="muted-text">Designed for creators, influencers, and modern brand work.</p>
+          </div>
+
+          <div class="visual-card stats-card">
+            <div class="small-label">Collaboration focus</div>
+            <div class="large-value">Editorial, warm, premium</div>
+            <p class="muted-text">A minimal pastel direction with clean hierarchy and room to breathe.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-tag">About</span>
+            <h2 class="section-title" data-lang="id">Partner kreatif untuk konten yang terasa lebih intentional.</h2>
+            <h2 class="section-title" data-lang="en">A creative partner for content that feels more intentional.</h2>
+          </div>
+          <div>
+            <p class="section-copy" data-lang="id">Saya bekerja sebagai freelance content editor dan personal content assistant untuk membantu setiap project terasa lebih rapi, relevan, dan siap tampil dengan kualitas yang lebih profesional. Fokus saya bukan hanya pada hasil edit, tetapi juga pada proses kreatif di baliknya.</p>
+            <p class="section-copy" data-lang="en">I work as a freelance content editor and personal content assistant, helping each project feel more polished, relevant, and ready to present with a stronger visual standard. My focus goes beyond the final edit and includes the creative process behind it.</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="symbol">01</div>
+            <h3 class="card-title" data-lang="id">Bukan sekadar editing</h3>
+            <h3 class="card-title" data-lang="en">More than editing</h3>
+            <p class="card-copy" data-lang="id">Saya membantu merapikan arah konten, visual rhythm, dan hasil akhir agar terasa lebih kuat dan selaras dengan brand atau personal identity.</p>
+            <p class="card-copy" data-lang="en">I help refine content direction, visual rhythm, and the final output so it feels stronger and better aligned with a brand or personal identity.</p>
+          </article>
+
+          <article class="card card-soft">
+            <div class="symbol">02</div>
+            <h3 class="card-title" data-lang="id">Workflow yang nyaman</h3>
+            <h3 class="card-title" data-lang="en">A smoother workflow</h3>
+            <p class="card-copy" data-lang="id">Mulai dari brief sampai delivery, setiap tahap dibuat jelas, tenang, dan efisien agar kolaborasi terasa ringan.</p>
+            <p class="card-copy" data-lang="en">From brief to delivery, each step is designed to feel clear, calm, and efficient so the collaboration stays easy.</p>
+          </article>
+
+          <article class="card card-warm">
+            <div class="symbol">03</div>
+            <h3 class="card-title" data-lang="id">Siap untuk creator dan brand</h3>
+            <h3 class="card-title" data-lang="en">Built for creators and brands</h3>
+            <p class="card-copy" data-lang="id">Cocok untuk short-form content, campaign support, personal branding, maupun ongoing content production.</p>
+            <p class="card-copy" data-lang="en">A good fit for short-form content, campaign support, personal branding, and ongoing content production.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-tag">Who I Work With</span>
+            <h2 class="section-title" data-lang="id">Dibuat untuk creator, influencer, dan brand yang ingin tampil lebih refined.</h2>
+            <h2 class="section-title" data-lang="en">Designed for creators, influencers, and brands ready for a more refined presence.</h2>
+          </div>
+          <div>
+            <p class="section-copy" data-lang="id">Landing page ini memakai bahasa visual yang soft dan premium, sehingga tetap hangat untuk personal brand, tetapi cukup rapi untuk kebutuhan kolaborasi brand.</p>
+            <p class="section-copy" data-lang="en">This landing page uses a soft and premium visual language that still feels warm for personal brands while staying polished enough for brand-facing collaborations.</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <article class="card who-card">
+            <div>
+              <span class="section-tag">Creators / Influencers</span>
+              <h3 class="card-title" data-lang="id">Untuk personal brand yang ingin terlihat lebih konsisten dan professional.</h3>
+              <h3 class="card-title" data-lang="en">For personal brands that want to look more consistent and professional.</h3>
+            </div>
+            <p class="card-copy" data-lang="id">Ideal untuk creator yang membutuhkan support visual, editing short-form, dan arah konten yang lebih terstruktur.</p>
+            <p class="card-copy" data-lang="en">Ideal for creators who need visual support, short-form editing, and a more structured content direction.</p>
+          </article>
+
+          <article class="card card-soft who-card">
+            <div>
+              <span class="section-tag">Brands</span>
+              <h3 class="card-title" data-lang="id">Untuk brand yang membutuhkan konten clean, engaging, dan aligned.</h3>
+              <h3 class="card-title" data-lang="en">For brands that need content that feels clean, engaging, and aligned.</h3>
+            </div>
+            <p class="card-copy" data-lang="id">Cocok untuk campaign visual, creator collaboration, dan konten sosial media dengan tampilan yang lebih polished.</p>
+            <p class="card-copy" data-lang="en">A strong fit for campaign visuals, creator collaborations, and social content with a more polished finish.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-tag">Services</span>
+            <h2 class="section-title" data-lang="id">Layanan inti yang terasa rapi, fleksibel, dan premium.</h2>
+            <h2 class="section-title" data-lang="en">Core services that feel polished, flexible, and premium.</h2>
+          </div>
+          <div>
+            <p class="section-copy" data-lang="id">Tiga penawaran utama ini membentuk positioning kamu sebagai editor sekaligus creative support partner, bukan sekadar vendor edit video.</p>
+            <p class="section-copy" data-lang="en">These three offers position you as both an editor and a creative support partner, rather than simply a video editing vendor.</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <span class="section-tag">01</span>
+            <h3 class="card-title">Content Editing</h3>
+            <p class="card-copy" data-lang="id">Untuk footage yang sudah tersedia dan membutuhkan final edit yang clean, engaging, dan siap upload.</p>
+            <p class="card-copy" data-lang="en">For existing footage that needs a clean, engaging final edit that is ready to post.</p>
+            <ul class="list">
+              <li>Short-form editing</li>
+              <li>Subtitles and pacing</li>
+              <li>Refined export delivery</li>
+            </ul>
+          </article>
+
+          <article class="card card-soft">
+            <span class="section-tag">02</span>
+            <h3 class="card-title">Content Assistance</h3>
+            <p class="card-copy" data-lang="id">Untuk project yang membutuhkan bantuan lebih dari sekadar edit, termasuk ide, shot support, dan visual direction.</p>
+            <p class="card-copy" data-lang="en">For projects that need more than editing alone, including content ideas, shoot support, and visual direction.</p>
+            <ul class="list">
+              <li>Content ideation</li>
+              <li>Simple shot planning</li>
+              <li>Creative support on set</li>
+            </ul>
+          </article>
+
+          <article class="card card-warm">
+            <span class="section-tag">03</span>
+            <h3 class="card-title">Ongoing Support</h3>
+            <p class="card-copy" data-lang="id">Untuk creator atau brand yang ingin menjaga konsistensi konten melalui kerja sama rutin.</p>
+            <p class="card-copy" data-lang="en">For creators or brands who want ongoing collaboration to maintain consistent content output.</p>
+            <ul class="list">
+              <li>Monthly editing support</li>
+              <li>Light planning workflow</li>
+              <li>Consistent visual output</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-tag">Selected Work</span>
+            <h2 class="section-title" data-lang="id">Project showcase yang bisa langsung kamu isi dengan karya terbaikmu.</h2>
+            <h2 class="section-title" data-lang="en">A project showcase ready to be filled with your best work.</h2>
+          </div>
+          <div>
+            <p class="section-copy" data-lang="id">Mockup ini memakai thumbnail editorial abstrak supaya komposisi halaman tetap terbaca sebelum kamu memasukkan hasil reel atau campaign asli.</p>
+            <p class="section-copy" data-lang="en">This mockup uses abstract editorial thumbnails so the page composition stays clear before you add your actual reels or campaign work.</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <article class="card work-card">
+            <div class="work-thumb">
+              <div class="thumb-layout">
+                <div class="thumb-box"></div>
+                <div class="thumb-column">
+                  <div class="thumb-box"></div>
+                  <div class="thumb-box"></div>
+                </div>
+              </div>
+            </div>
+            <div class="work-body">
+              <div class="work-meta">
+                <span class="badge">Editing</span>
+                <span class="badge">Creator</span>
+              </div>
+              <h3 class="work-title">Lifestyle short-form series</h3>
+              <p class="card-copy" data-lang="id">Konten edit cepat dengan pacing yang ringan dan visual yang lebih clean untuk personal brand creator.</p>
+              <p class="card-copy" data-lang="en">Fast-paced edits with a lighter rhythm and cleaner visual finish for a creator-led personal brand.</p>
+            </div>
+          </article>
+
+          <article class="card work-card">
+            <div class="work-thumb">
+              <div class="thumb-layout">
+                <div class="thumb-column">
+                  <div class="thumb-box"></div>
+                  <div class="thumb-box"></div>
+                </div>
+                <div class="thumb-box"></div>
+              </div>
+            </div>
+            <div class="work-body">
+              <div class="work-meta">
+                <span class="badge">Brand</span>
+                <span class="badge">Campaign</span>
+              </div>
+              <h3 class="work-title">Soft product campaign edits</h3>
+              <p class="card-copy" data-lang="id">Visual campaign yang lebih rapi untuk brand dengan tampilan hangat, elegan, dan mudah dipahami.</p>
+              <p class="card-copy" data-lang="en">Refined campaign visuals for a brand that wanted something warm, elegant, and easy to consume.</p>
+            </div>
+          </article>
+
+          <article class="card work-card">
+            <div class="work-thumb">
+              <div class="thumb-layout">
+                <div class="thumb-box"></div>
+                <div class="thumb-box"></div>
+              </div>
+            </div>
+            <div class="work-body">
+              <div class="work-meta">
+                <span class="badge">Content Support</span>
+                <span class="badge">Reels</span>
+              </div>
+              <h3 class="work-title">Content support for launch week</h3>
+              <p class="card-copy" data-lang="id">Support konten untuk minggu launching dengan struktur shot dan output yang lebih efisien.</p>
+              <p class="card-copy" data-lang="en">Content support for a launch week with a more efficient shot structure and polished final output.</p>
+            </div>
+          </article>
+
+          <article class="card work-card">
+            <div class="work-thumb">
+              <div class="thumb-layout">
+                <div class="thumb-column">
+                  <div class="thumb-box"></div>
+                  <div class="thumb-box"></div>
+                </div>
+                <div class="thumb-column">
+                  <div class="thumb-box"></div>
+                  <div class="thumb-box"></div>
+                </div>
+              </div>
+            </div>
+            <div class="work-body">
+              <div class="work-meta">
+                <span class="badge">Personal Branding</span>
+                <span class="badge">Editorial</span>
+              </div>
+              <h3 class="work-title">Visual refresh for creator branding</h3>
+              <p class="card-copy" data-lang="id">Pembaruan tampilan konten agar lebih konsisten, lebih tenang, dan terasa lebih premium.</p>
+              <p class="card-copy" data-lang="en">A content refresh to make the visual identity feel more consistent, more calm, and more premium overall.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-tag">Process</span>
+            <h2 class="section-title" data-lang="id">Alur kerja yang singkat, jelas, dan meyakinkan.</h2>
+            <h2 class="section-title" data-lang="en">A workflow that feels clear, calm, and easy to trust.</h2>
+          </div>
+          <div>
+            <p class="section-copy" data-lang="id">Section ini penting untuk klien luar negeri karena mereka biasanya ingin melihat proses kerja yang straightforward sebelum menghubungi.</p>
+            <p class="section-copy" data-lang="en">This section matters for international clients because they usually want to understand a straightforward process before reaching out.</p>
+          </div>
+        </div>
+
+        <div class="steps">
+          <article class="card step">
+            <div class="step-number">01</div>
+            <h3 class="card-title">Brief</h3>
+            <p class="card-copy" data-lang="id">Memahami tujuan project, tone visual, deliverables, dan timeline.</p>
+            <p class="card-copy" data-lang="en">Understand the project goals, visual tone, deliverables, and timeline.</p>
+          </article>
+
+          <article class="card card-soft step">
+            <div class="step-number">02</div>
+            <h3 class="card-title">Planning</h3>
+            <p class="card-copy" data-lang="id">Menyusun ide, direction, atau kebutuhan shoot bila diperlukan.</p>
+            <p class="card-copy" data-lang="en">Shape ideas, direction, or shoot needs when required.</p>
+          </article>
+
+          <article class="card card-warm step">
+            <div class="step-number">03</div>
+            <h3 class="card-title">Editing</h3>
+            <p class="card-copy" data-lang="id">Mengolah footage menjadi output yang rapi, engaging, dan aligned.</p>
+            <p class="card-copy" data-lang="en">Turn the footage into something polished, engaging, and aligned.</p>
+          </article>
+
+          <article class="card step">
+            <div class="step-number">04</div>
+            <h3 class="card-title">Delivery</h3>
+            <p class="card-copy" data-lang="id">Review final sebelum handoff agar hasil tetap sesuai kebutuhan project.</p>
+            <p class="card-copy" data-lang="en">Review the final result before handoff to make sure it fits the project needs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-tag">Client Feedback</span>
+            <h2 class="section-title" data-lang="id">Area testimoni yang terasa clean dan credible.</h2>
+            <h2 class="section-title" data-lang="en">A testimonial area that feels clean and credible.</h2>
+          </div>
+          <div>
+            <p class="section-copy" data-lang="id">Nanti kamu bisa mengganti isi quote ini dengan feedback nyata dari klien lokal maupun internasional.</p>
+            <p class="section-copy" data-lang="en">You can later replace these quotes with real feedback from both local and international clients.</p>
+          </div>
+        </div>
+
+        <div class="quotes">
+          <article class="card">
+            <div class="quote-mark">"</div>
+            <p class="card-copy" data-lang="id">Proses kerjanya nyaman, komunikatif, dan hasil editnya terasa lebih rapi dari yang kami bayangkan.</p>
+            <p class="card-copy" data-lang="en">The process felt smooth and communicative, and the final edit looked more refined than we expected.</p>
+            <p class="quote-author">Creator collaboration</p>
+          </article>
+
+          <article class="card card-soft">
+            <div class="quote-mark">"</div>
+            <p class="card-copy" data-lang="id">Bukan hanya membantu editing, tetapi juga membuat keseluruhan konten terasa lebih terarah secara visual.</p>
+            <p class="card-copy" data-lang="en">It was more than editing support. The whole content direction felt more intentional and visually cohesive.</p>
+            <p class="quote-author">Brand content team</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta-panel">
+          <div>
+            <span class="section-tag">Final CTA</span>
+            <h2 class="section-title" data-lang="id">Siap membuat kontenmu terasa lebih polished?</h2>
+            <h2 class="section-title" data-lang="en">Ready to make your content feel more polished?</h2>
+            <p class="section-copy" data-lang="id">Bagian ini didesain sebagai penutup yang hangat dan premium sebelum user masuk ke form contact.</p>
+            <p class="section-copy" data-lang="en">This section is designed to feel like a warm, premium closing moment before the user moves into the contact form.</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title" data-lang="id">Mari diskusikan kebutuhan project-mu.</h3>
+            <h3 class="card-title" data-lang="en">Let's talk about your next project.</h3>
+            <p class="card-copy" data-lang="id">Ideal untuk freelance editing, creator support, dan brand collaborations.</p>
+            <p class="card-copy" data-lang="en">Ideal for freelance editing, creator support, and brand collaborations.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact">
+                <span data-lang-inline="id">Mulai Project</span>
+                <span data-lang-inline="en">Start a Project</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-grid">
+        <div>
+          <span class="section-tag">Contact</span>
+          <h2 class="section-title" data-lang="id">Section kontak yang simpel, jelas, dan langsung usable.</h2>
+          <h2 class="section-title" data-lang="en">A contact section that feels simple, clear, and ready to use.</h2>
+          <p class="section-copy" data-lang="id">Mockup ini memakai form pendek supaya tidak terasa berat. Kamu bisa menambahkan email bisnis, Instagram, atau link call sesuai kebutuhan.</p>
+          <p class="section-copy" data-lang="en">This mockup uses a short form so the experience does not feel heavy. You can add your business email, Instagram, or a call link as needed.</p>
+
+          <div class="contact-list">
+            <div class="contact-item">
+              <strong>Email</strong><br>
+              hello@naylastudio.com
+            </div>
+            <div class="contact-item">
+              <strong>Instagram</strong><br>
+              @naylastudio
+            </div>
+            <div class="contact-item">
+              <strong data-lang="id">Kolaborasi</strong>
+              <strong data-lang="en">Collaboration</strong><br>
+              Creator campaigns, brand visuals, short-form content
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <form>
+            <div class="field-grid">
+              <div>
+                <label for="name">
+                  <span data-lang-inline="id">Nama</span>
+                  <span data-lang-inline="en">Name</span>
+                </label>
+                <input id="name" type="text" placeholder="Your name">
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="your@email.com">
+              </div>
+            </div>
+
+            <div class="field-grid">
+              <div>
+                <label for="brand">
+                  <span data-lang-inline="id">Brand / Creator Name</span>
+                  <span data-lang-inline="en">Brand / Creator Name</span>
+                </label>
+                <input id="brand" type="text" placeholder="Your brand or account">
+              </div>
+              <div>
+                <label for="type">
+                  <span data-lang-inline="id">Jenis Project</span>
+                  <span data-lang-inline="en">Project Type</span>
+                </label>
+                <select id="type">
+                  <option>Content editing</option>
+                  <option>Content assistance</option>
+                  <option>Ongoing support</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="details">
+                <span data-lang-inline="id">Detail Project</span>
+                <span data-lang-inline="en">Project Details</span>
+              </label>
+              <textarea id="details" placeholder="Share your needs, preferred style, timeline, or references."></textarea>
+            </div>
+
+            <button class="btn btn-primary" type="button">
+              <span data-lang-inline="id">Kirim Pesan</span>
+              <span data-lang-inline="en">Send Enquiry</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <span data-lang="id">Content Editor &amp; Personal Content Assistant untuk creator, influencer, dan brand.</span>
+        <span data-lang="en">Content Editor &amp; Personal Content Assistant for creators, influencers, and brands.</span>
+      </div>
+      <div>ID / EN mockup landing page</div>
+    </div>
+  </footer>
+
+  <script>
+    const root = document.documentElement;
+    const buttons = document.querySelectorAll("[data-set-lang]");
+
+    function setLanguage(lang) {
+      root.classList.remove("lang-id", "lang-en");
+      root.classList.add("lang-" + lang);
+      root.setAttribute("lang", lang === "id" ? "id" : "en");
+      buttons.forEach((button) => {
+        button.classList.toggle("active", button.dataset.setLang === lang);
+      });
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.dataset.setLang));
+    });
+
+    setLanguage("id");
+  </script>
+
+
+<div data-trae-edit-ui="true" class="trae-image-download-btn" title="Download image" style="position: fixed; display: none; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 6px; background: var(--trae-bg-menu, #222427); border: 1px solid var(--trae-border-l2, rgba(255,255,255,0.12)); box-shadow: var(--trae-floating-shadow, 0px 2px 8px 0px rgba(0,0,0,0.2)); color: var(--trae-icon-default, #f5f9fe); cursor: pointer; z-index: 89990; transition: background 0.15s; pointer-events: auto;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 2v8m0 0L5 7m3 3l3-3M3 12h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg></div></body></html>
